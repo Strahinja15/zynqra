@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Build outputs
+out/
+build/
+dist/
+.next/
+
+# Config & env files
+.env.local
+.env.*.local
+next-env.d.ts
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
