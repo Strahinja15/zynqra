@@ -6,26 +6,36 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const Header = () => {
-    const pathName = usePathname();
+  const pathName = usePathname();
   return (
     <header>
-        <div className="main-container inner">
-            <Link href="/">
-                <Image src="logo.svg" alt="Zynqra Logo" width={60} height={40}/>
-            </Link>
-            <nav>
-                <Link href="/" className={cn('nav-link', {
-                    'is-active': pathName === '/',
-                    'is-home': true
-                })}>Home</Link>
-                <p>Search Modal</p>
-                <Link href="/coins" className={cn('nav-link', {
-                    'is-active': pathName === 'coins'
-                })}>All Coins</Link>
-            </nav>
-        </div>
+      <div className="main-container inner">
+        <Link href="/">
+          <Image src="logo.svg" alt="Zynqra Logo" width={60} height={40} />
+        </Link>
+        <nav>
+          <Link
+            href="/"
+            className={cn('nav-link', {
+              'is-active': pathName === '/',
+              'is-home': true,
+            })}
+          >
+            Home
+          </Link>
+          <p>Search Modal</p>
+          <Link
+            href="/coins"
+            className={cn('nav-link', {
+              'is-active': pathName === 'coins',
+            })}
+          >
+            All Coins
+          </Link>
+        </nav>
+      </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
