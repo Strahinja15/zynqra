@@ -28,7 +28,8 @@ const DataTable = <T,>({
             <TableHead
               key={i}
               className={cn(
-                'bg-dark-400 text-purple-100 py-4 first:pl-5 last:pl-5'
+                'bg-dark-400 text-purple-100 py-4 first:pl-5 last:pl-5',
+                headerCellClassName
               )}
             >
               {column.header}
@@ -41,14 +42,14 @@ const DataTable = <T,>({
           <TableRow
             key={rowKey(row, rowIndex)}
             className={cn(
-              'overflow-hidden rounded-lg border-b border-purple-100/5 hover:dark-400/30! relative',
+              'overflow-hidden rounded-lg border-b border-purple-100/5 hover:bg-dark-400/30! relative',
               bodyRowClassName
             )}
           >
             {columns.map((column, columnIndex) => (
               <TableCell
                 key={columnIndex}
-                className={cn('py-4 first:pl-5 last:pl-5')}
+                className={cn('py-4 first:pl-5 last:pl-5', bodyCellClassName, column.cellClassName)}
               >
                 {column.cell(row, rowIndex)}
               </TableCell>

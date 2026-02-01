@@ -28,7 +28,7 @@ export const TrendingCoinsFallback = () => {
     },
     {
       header: '24h Change',
-      cellClassName: 'name-cell',
+      cellClassName: 'change-cell',
       cell: () => (
         <div className="h-4 bg-slate-700 rounded w-12 animate-pulse" />
       ),
@@ -54,5 +54,3 @@ export const TrendingCoinsFallback = () => {
     </div>
   );
 };
-
-export default null;
