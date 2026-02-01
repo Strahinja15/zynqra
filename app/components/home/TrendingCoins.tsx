@@ -28,38 +28,35 @@ const TrendingCoins = async () => {
       },
     },
     {
-  header: '24h Change',
-  cellClassName: 'name-cell',
-  cell: (coin) => {
-    const item = coin.item;
-    const change = item.data.price_change_percentage_24h.usd;
-    const isTrendingUp = change > 0;
+      header: '24h Change',
+      cellClassName: 'name-cell',
+      cell: (coin) => {
+        const item = coin.item;
+        const change = item.data.price_change_percentage_24h.usd;
+        const isTrendingUp = change > 0;
 
-    return (
-      <div
-        className={cn(
-          'flex items-center gap-1 font-medium',
-          isTrendingUp ? 'text-green-500' : 'text-red-500'
-        )}
-      >
-        {isTrendingUp ? (
-          <TrendingUp width={16} height={16} />
-        ) : (
-          <TrendingDown width={16} height={16} />
-        )}
-        <span>{change.toFixed(2)}%</span>
-      </div>
-    );
-  },
-}
-,
+        return (
+          <div
+            className={cn(
+              'flex items-center gap-1 font-medium',
+              isTrendingUp ? 'text-green-500' : 'text-red-500'
+            )}
+          >
+            {isTrendingUp ? (
+              <TrendingUp width={16} height={16} />
+            ) : (
+              <TrendingDown width={16} height={16} />
+            )}
+            <span>{change.toFixed(2)}%</span>
+          </div>
+        );
+      },
+    },
     {
-  header: 'Price',
-  cellClassName: 'price-cell',
-  cell: (coin) =>
-    formatCurrency(coin.item.data.price, 'USD'),
-},
-
+      header: 'Price',
+      cellClassName: 'price-cell',
+      cell: (coin) => formatCurrency(coin.item.data.price, 'USD'),
+    },
   ];
   return (
     <div id="trending-coins">
