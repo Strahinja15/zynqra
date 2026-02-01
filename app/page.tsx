@@ -6,16 +6,15 @@ import {
   TrendingCoinsFallback,
 } from './components/fallback';
 
-
 const Page = async () => {
   return (
     <main className="main-container">
       <section className="home-grid">
         <Suspense fallback={<CoinOverviewFallback />}>
-          <CoinOverview/>
+          <CoinOverview />
         </Suspense>
         <Suspense fallback={<TrendingCoinsFallback />}>
-          <TrendingCoins/>
+          <TrendingCoins />
         </Suspense>
       </section>
       <section className="w-full mt-7 space-y-4">
