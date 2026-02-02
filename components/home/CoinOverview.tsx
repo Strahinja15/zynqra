@@ -3,7 +3,7 @@ import { fetcher } from '@/lib/coingecko.actions';
 import { formatCurrency } from '@/lib/utils';
 import Image from 'next/image';
 import { CoinOverviewFallback } from '../fallback';
-import CandlestickChart from '../CandlestickChart';
+import CandlestickChart from './CandlestickChart';
 
 const CoinOverview = async () => {
   let coin;

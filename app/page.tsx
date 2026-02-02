@@ -1,12 +1,12 @@
 import { Suspense } from 'react';
-import CoinOverview from './components/home/CoinOverview';
-import TrendingCoins from './components/home/TrendingCoins';
+import CoinOverview from '../components/home/CoinOverview';
+import TrendingCoins from '../components/home/TrendingCoins';
 import {
   CoinOverviewFallback,
   TrendingCoinsFallback,
   CategoriesFallback,
-} from './components/fallback';
-import Categories from './components/home/Categories';
+} from '../components/fallback';
+import Categories from '../components/home/Categories';
 
 const Page = async () => {
   return (
