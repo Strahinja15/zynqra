@@ -26,7 +26,9 @@ const page = async ({ params }: NextPageProps) => {
     ? coinData.detail_platforms?.[coinData.asset_platform_id]
     : null;
 
-  const network = platform?.geckoterminal_url.split('/')[3] || null;
+  const network = platform?.geckoterminal_url
+    ? platform.geckoterminal_url.split('/')[3] ?? null
+    : null;
   const contractAddress = platform?.contract_address || null;
 
   const pool = await getPools(id, network, contractAddress);
