@@ -10,7 +10,7 @@ export function formatCurrency(
   value: number | null | undefined,
   currency?: string,
   digits?: number,
-  showSymbol?: boolean,
+  showSymbol?: boolean
 ) {
   if (value === null || value === undefined || isNaN(value)) {
     return showSymbol !== false ? '$0.00' : '0.00';
@@ -81,13 +81,15 @@ export function convertOHLCData(data: OHLCData[]) {
       low: d[3],
       close: d[4],
     }))
-    .filter((item, index, arr) => index === 0 || item.time !== arr[index - 1].time);
+    .filter(
+      (item, index, arr) => index === 0 || item.time !== arr[index - 1].time
+    );
 }
 
 export const ELLIPSIS = 'ellipsis' as const;
 export const buildPageNumbers = (
   currentPage: number,
-  totalPages: number,
+  totalPages: number
 ): (number | typeof ELLIPSIS)[] => {
   const MAX_VISIBLE_PAGES = 5;
 

@@ -11,7 +11,7 @@ const Header = () => {
     <header>
       <div className="main-container inner">
         <Link href="/">
-          <Image src="/logo.svg" alt="Zynqra Logo" width={60} height={40} />
+          <Image src="/logo.png" alt="Zynqra Logo" width={250} height={160} />
         </Link>
         <nav>
           <Link
