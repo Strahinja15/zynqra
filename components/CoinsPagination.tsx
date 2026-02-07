@@ -12,7 +12,11 @@ import {
 import { useRouter } from 'next/navigation';
 import { buildPageNumbers, cn, ELLIPSIS } from '@/lib/utils';
 
-const CoinsPagination = ({ currentPage, totalPages, hasMorePages }: Pagination) => {
+const CoinsPagination = ({
+  currentPage,
+  totalPages,
+  hasMorePages,
+}: Pagination) => {
   const router = useRouter();
 
   const handlePageChange = (page: number) => {
@@ -28,7 +32,9 @@ const CoinsPagination = ({ currentPage, totalPages, hasMorePages }: Pagination) 
         <PaginationItem className="pagination-control prev">
           <PaginationPrevious
             onClick={() => currentPage > 1 && handlePageChange(currentPage - 1)}
-            className={currentPage === 1 ? 'control-disabled' : 'control-button'}
+            className={
+              currentPage === 1 ? 'control-disabled' : 'control-button'
+            }
           />
         </PaginationItem>
 

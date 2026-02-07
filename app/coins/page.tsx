@@ -51,9 +51,9 @@ const Coins = async ({ searchParams }: NextPageProps) => {
       cell: (coin) => formatCurrency(coin.current_price),
     },
     {
-        header: '24h Change', 
-        cellClassName: 'change-header-cell', 
-        cell: (category) => {
+      header: '24h Change',
+      cellClassName: 'change-header-cell',
+      cell: (category) => {
         const change = category.market_cap_change_24h;
         const isTrendingUp = change > 0;
 
@@ -65,12 +65,12 @@ const Coins = async ({ searchParams }: NextPageProps) => {
             )}
           >
             <p className="flex gap-1">
-            {isTrendingUp ? (
-              <TrendingUp width={16} height={16} />
-            ) : (
-              <TrendingDown width={16} height={16} />
-            )}
-            {formatPercentage(category.price_change_percentage_24h)}
+              {isTrendingUp ? (
+                <TrendingUp width={16} height={16} />
+              ) : (
+                <TrendingDown width={16} height={16} />
+              )}
+              {formatPercentage(category.price_change_percentage_24h)}
             </p>
           </div>
         );
@@ -85,7 +85,8 @@ const Coins = async ({ searchParams }: NextPageProps) => {
 
   const hasMorePages = coinsData.length === perPage;
 
-  const estimatedTotalPages = currentPage >= 100 ? Math.ceil(currentPage / 100) * 100 + 100 : 100;
+  const estimatedTotalPages =
+    currentPage >= 100 ? Math.ceil(currentPage / 100) * 100 + 100 : 100;
 
   return (
     <main id="coins-page">
